@@ -25,7 +25,7 @@
      * @param {bool} immediate Whether login should use the "immediate mode", which
      *     causes the security token to be refreshed behind the scenes with no UI.
      */
-    function checkAuth(immediate) {
+    function checkAuthBool(immediate) {
       var authorizeCheckPromise = new Promise((resolve) => {
         gapi.auth.authorize(
           { client_id: CLIENT_ID, scope: SCOPES.join(' '), immediate: immediate },
@@ -44,7 +44,7 @@
      * Check if current user has authorization for this application.
      */
     function checkAuth() {
-      checkAuth(true);
+      checkAuthBool(true);
     }
 
     /**
